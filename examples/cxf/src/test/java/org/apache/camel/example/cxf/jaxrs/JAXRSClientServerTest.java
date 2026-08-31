@@ -80,10 +80,8 @@ class JAXRSClientServerTest extends CamelSpringTestSupport {
         return new ClassPathXmlApplicationContext(new String[]{"/META-INF/spring/JAXRSCamelContext.xml"});
     }
     
-    @Override
     @AfterEach
-    public void tearDown() throws Exception {
-        super.tearDown();
+    public void cleanUpBus() throws Exception {
         BusFactory.setDefaultBus(null);
         BusFactory.setThreadDefaultBus(null);
     }
